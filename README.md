@@ -34,6 +34,8 @@ Each amino acid is encoded by three nucleotide bases (codons). To find the total
 
 
 
-Summary of Answers:
-Number of Amino Acids (excluding stop codon): 29
-Number of Bases in the ORF (including stop codon): 90
+## Summary of Answers
+
+- **Number of Amino Acids (excluding stop codon):** 29
+- **Number of Bases in the ORF (including stop codon):** 90
+
