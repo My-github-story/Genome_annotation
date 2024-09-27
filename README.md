@@ -16,3 +16,46 @@ Amino acids: 30, Bases in ORF: 93
 3594
 
 #### Comment-A CDS refers specifically to the portion of the genome that is translated into a protein, whereas a gene might also include non-coding elements like promoters or untranslated regions (UTRs). Prodigal focuses on coding sequences, so it uses "CDS" to annotate each predicted gene that codes for a protein.
+
+## Run prodigal on all of the genomes you have previously downloaded. Using command line tools, find which genome has the highest number of genes. Put all your code into a shell script, and put your code on the repository on Github where you keep your README with the solutions to this assignment.
+
+## Code
+# Directory containing genome files
+GENOME_DIR="$HOME/ncbi_dataset/data"  # Use the full path
+OUTPUT_DIR="$HOME/ncbi_dataset/data" # Change to desired output path
+
+# Create output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
+
+# Variables to track the genome with the highest number of genes
+max_genes=0
+best_genome=""
+
+# Loop through all fasta files in the genome directory
+for genome in "$GENOME_DIR"/*.fna; do
+    # Check if the file exists
+    if [[ ! -e "$genome" ]]; then
+        echo "No fasta files found in $GENOME_DIR."
+        exit 1
+    fi
+
+    # Run Prodigal
+    prodigal -i "$genome" -o "$OUTPUT_DIR/$(basename "$genome" .fna).gbk" -a "$OUTPUT_DIR/$(basename "$genome" .fna).faa" -f gbk
+    
+    # Count the number of genes
+    gene_count=$(grep -c 'CDS' "$OUTPUT_DIR/$(basename "$genome" .fna).gbk")
+    
+    echo "Genome: $(basename "$genome"), Genes: $gene_count"
+
+    # Check if this genome has the highest number of genes
+    if [[ "$gene_count" -gt "$max_genes" ]]; then
+        max_genes=$gene_count
+        best_genome=$(basename "$genome")
+    fi
+done
+
+if [[ "$max_genes" -eq 0 ]]; then
+    echo "No genes were found in any genomes."
+else
+    echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
+fi
