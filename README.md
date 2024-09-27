@@ -55,6 +55,9 @@ for genome in "$GENOME_DIR"/*.fna; do
     fi
 done
 
+## Output-
+Genome with the highest number of genes: GCA_000006745.1_ASM674v1_genomic.fna with 3594 genes
+
 if [[ "$max_genes" -eq 0 ]]; then
     echo "No genes were found in any genomes."
 else
