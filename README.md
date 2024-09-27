@@ -54,12 +54,12 @@ for genome in "$GENOME_DIR"/*.fna; do
         best_genome=$(basename "$genome")
     fi
 done
-
-## Output-
-Genome with the highest number of genes: GCA_000006745.1_ASM674v1_genomic.fna with 3594 genes
-
 if [[ "$max_genes" -eq 0 ]]; then
     echo "No genes were found in any genomes."
 else
     echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
-fi 
+fi ```
+
+
+## Output-
+Genome with the highest number of genes: GCA_000006745.1_ASM674v1_genomic.fna with 3594 genes
