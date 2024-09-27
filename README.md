@@ -59,4 +59,4 @@ if [[ "$max_genes" -eq 0 ]]; then
     echo "No genes were found in any genomes."
 else
     echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
-fi ```
+fi 
