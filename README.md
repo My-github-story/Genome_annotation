@@ -20,14 +20,15 @@ Amino acids: 30, Bases in ORF: 93
 ## Run prodigal on all of the genomes you have previously downloaded. Using command line tools, find which genome has the highest number of genes. Put all your code into a shell script, and put your code on the repository on Github where you keep your README with the solutions to this assignment.
 
 ## Code
-# Directory containing genome files
+
+### Directory containing genome files
 GENOME_DIR="$HOME/ncbi_dataset/data"  # Use the full path
 OUTPUT_DIR="$HOME/ncbi_dataset/data" # Change to desired output path
 
-# Create output directory if it doesn't exist
+### Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-# Variables to track the genome with the highest number of genes
+### Variables to track the genome with the highest number of genes
 max_genes=0
 best_genome=""
 
