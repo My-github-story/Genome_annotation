@@ -15,3 +15,4 @@ Amino acids: 30, Bases in ORF: 93
 ## Output-
 3594
 
+#### Comment-A CDS refers specifically to the portion of the genome that is translated into a protein, whereas a gene might also include non-coding elements like promoters or untranslated regions (UTRs). Prodigal focuses on coding sequences, so it uses "CDS" to annotate each predicted gene that codes for a protein.
