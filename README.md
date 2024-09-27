@@ -21,7 +21,7 @@ Amino acids: 30, Bases in ORF: 93
 
 ## Code
 
-### Directory containing genome files
+```### Directory containing genome files
 GENOME_DIR="$HOME/ncbi_dataset/data"  # Use the full path
 OUTPUT_DIR="$HOME/ncbi_dataset/data" # Change to desired output path
 
@@ -59,4 +59,4 @@ if [[ "$max_genes" -eq 0 ]]; then
     echo "No genes were found in any genomes."
 else
     echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
-fi
+fi```
