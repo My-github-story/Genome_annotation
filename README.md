@@ -156,7 +156,8 @@ else
 fi
 ```
 ## Commands to run prokka
-``` chmod +x annotate_and_count_cds.sh
+
+```chmod +x annotate_and_count_cds.sh
 ./run_annotate_and_count_cds.sh
 ```
 
