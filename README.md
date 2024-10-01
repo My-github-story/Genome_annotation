@@ -76,8 +76,8 @@ else
 fi
 ```
 ## Commands to run prodigal
-chmod +x ./gene_count.sh
-./gene_count.sh
+```chmod +x ./gene_count.sh```
+```./gene_count.sh```
 
 ## Output-
 ``` Genome: GCA_000006745.1_ASM674v1_genomic.fna, Genes: 3594
