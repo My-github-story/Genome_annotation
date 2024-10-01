@@ -157,9 +157,8 @@ fi
 ```
 ## Commands to run prokka
 
-```chmod +x annotate_and_count_cds.sh
-./run_annotate_and_count_cds.sh
-```
+```chmod +x annotate_and_count_cds.sh```
+```./run_annotate_and_count_cds.sh```
 
 ## Output
 ```Genome: GCA_000006745.1_ASM674v1_genomic.fna,  Genes: 3589
