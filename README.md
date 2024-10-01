@@ -21,19 +21,24 @@ Amino acids: 30, Bases in ORF: 93
 
 ## Command to create the shell script and the code
 ```nano run_prodigal.sh```
+
 ## Code
 
 ``` javascript
-### Directory containing genome files
-GENOME_DIR="$HOME/ncbi_dataset/data"  # Use the full path
-OUTPUT_DIR="$HOME/ncbi_dataset/data" # Change to desired output path
 
-### Create output directory if it doesn't exist
+#!/bin/bash
+
+# Directory containing genome files
+GENOME_DIR="/home/abazaiea/ncbi_dataset/prodigal_output/"  # Use the full path
+OUTPUT_DIR="/home/abazaiea/ncbi_dataset/prodigal_output/" # Change to desired output path
+
+# Create output directory if it doesn't exist
 mkdir -p "$OUTPUT_DIR"
 
-### Variables to track the genome with the highest number of genes
-max_genes=0
-best_genome=""
+# Variables to track the total number of genes and the genome with the highest number of genes
+total_genes=0  # Initialize a variable to keep track of the total number of genes across all genomes
+max_genes=0    # Initialize a variable to keep track of the maximum number of genes found in a single genome
+best_genome=""  # Initialize a variable to store the name of the genome with the highest number of genes
 
 # Loop through all fasta files in the genome directory
 for genome in "$GENOME_DIR"/*.fna; do
@@ -49,17 +54,24 @@ for genome in "$GENOME_DIR"/*.fna; do
     # Count the number of genes
     gene_count=$(grep -c 'CDS' "$OUTPUT_DIR/$(basename "$genome" .fna).gbk")
     
+    # Update total gene count
+    total_genes=$((total_genes + gene_count))  # Add the count of genes for the current genome to the total gene count
+
+    # Print the gene count for the current genome
     echo "Genome: $(basename "$genome"), Genes: $gene_count"
 
     # Check if this genome has the highest number of genes
     if [[ "$gene_count" -gt "$max_genes" ]]; then
-        max_genes=$gene_count
-        best_genome=$(basename "$genome")
+        max_genes=$gene_count  # Update max_genes if the current genome has more genes
+        best_genome=$(basename "$genome")  # Store the name of the genome with the highest gene count
     fi
 done
-if [[ "$max_genes" -eq 0 ]]; then
+
+# Output the total number of genes and the genome with the highest number of genes
+if [[ "$total_genes" -eq 0 ]]; then
     echo "No genes were found in any genomes."
 else
+    echo "Total number of genes across all genomes: $total_genes"
     echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
 fi
 ```
