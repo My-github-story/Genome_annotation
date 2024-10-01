@@ -20,7 +20,7 @@ Amino acids: 30, Bases in ORF: 93
 ## 3) Run prodigal on all of the genomes you have previously downloaded. Using command line tools, find which genome has the highest number of genes. Put all your code into a shell script, and put your code on the repository on Github where you keep your README with the solutions to this assignment.
 
 ## Command to create the shell script and the code
-```nano run_prodigal.sh```
+```nano gene_count.sh```
 
 ## Code
 
@@ -75,6 +75,24 @@ else
     echo "Genome with the highest number of genes: $best_genome with $max_genes genes"
 fi
 ```
+## Commands to run prodigal
+chmod +x run_prodigal.sh
+./gene_count.sh
 
 ## Output-
-Genome with the highest number of genes: GCA_000006745.1_ASM674v1_genomic.fna with 3594 genes
+``` Genome: GCA_000006745.1_ASM674v1_genomic.fna, Genes: 3594
+Genome: GCA_000006825.1_ASM682v1_genomic.fna, Genes: 2032
+Genome: GCA_000006865.1_ASM686v1_genomic.fna, Genes: 2383
+Genome: GCA_000007125.1_ASM712v1_genomic.fna, Genes: 3152
+Genome: GCA_000008525.1_ASM852v1_genomic.fna, Genes: 1579
+Genome: GCA_000008545.1_ASM854v1_genomic.fna, Genes: 1866
+Genome: GCA_000008565.1_ASM856v1_genomic.fna, Genes: 3248
+Genome: GCA_000008605.1_ASM860v1_genomic.fna, Genes: 1009
+Genome: GCA_000008625.1_ASM862v1_genomic.fna, Genes: 1776
+Genome: GCA_000008725.1_ASM872v1_genomic.fna, Genes: 897
+Genome: GCA_000008745.1_ASM874v1_genomic.fna, Genes: 1063
+Genome: GCA_000008785.1_ASM878v1_genomic.fna, Genes: 1505
+Genome: GCA_000027305.1_ASM2730v1_genomic.fna, Genes: 1748
+Genome: GCA_000091085.2_ASM9108v2_genomic.fna, Genes: 1063
+```
+
