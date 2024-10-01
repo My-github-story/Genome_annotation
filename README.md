@@ -95,9 +95,9 @@ Genome: GCA_000008785.1_ASM878v1_genomic.fna, Genes: 1505
 Genome: GCA_000027305.1_ASM2730v1_genomic.fna, Genes: 1748
 Genome: GCA_000091085.2_ASM9108v2_genomic.fna, Genes: 1063
 ```
-``` Total number of genes across all genomes: 26915
+Total number of genes across all genomes: 26915
 Genome with the highest number of genes: GCA_000006745.1_ASM674v1_genomic.fna with 3594 genes
-```
+
 ## 4) Annotate all genomes you have previously downloaded using prokka instead of prodigal. Using shell commands, count the number of coding sequences (CDS) annotated by Prokka. Are the total number of genes the same as they were with prodigal? What are the differences?
 
 ## Command to create the shell script and the code
