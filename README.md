@@ -19,6 +19,8 @@ Amino acids: 30, Bases in ORF: 93
 
 ## 3) Run prodigal on all of the genomes you have previously downloaded. Using command line tools, find which genome has the highest number of genes. Put all your code into a shell script, and put your code on the repository on Github where you keep your README with the solutions to this assignment.
 
+## Command to create the shell script and the code
+```nano run_prodigal.sh```
 ## Code
 
 ``` javascript
